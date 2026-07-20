@@ -1,0 +1,14 @@
+{
+  "name": "afrimen",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "node -e \"const { spawn } = require('child_process'); spawn('npm', ['run', 'dev:backend'], { stdio: 'inherit', shell: true }); spawn('npm', ['run', 'dev:frontend'], { stdio: 'inherit', shell: true });\"",
+    "build": "cd frontend && npm run build",
+    "db:init": "cd backend && npm run db:init",
+    "db:seed": "cd backend && npm run db:seed"
+  }
+}
