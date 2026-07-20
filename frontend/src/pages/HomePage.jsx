@@ -40,7 +40,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-visual">
-            <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&h=750&fit=crop&auto=format" alt="Afrimen blazer" className="product-img" />
+            <img src="https://images.unsplash.com/photo-1610189585935-f3d92154b752?w=600&h=750&fit=crop&auto=format" alt="Afrimen blazer" className="product-img" />
             <div className="tagline"><span>SKU AF-0001</span><span>WOOL / 420g</span></div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
 
 function catCard(cat, n, desc) {
   const img = cat === 'Clothing'
-    ? 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&h=720&fit=crop&auto=format'
+    ? 'https://images.unsplash.com/photo-1610189585935-f3d92154b752?w=600&h=720&fit=crop&auto=format'
     : cat === 'Shoes'
       ? 'https://images.unsplash.com/photo-1614252235316-8c85727138e8?w=600&h=720&fit=crop&auto=format'
       : 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&h=720&fit=crop&auto=format'
