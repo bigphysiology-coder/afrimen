@@ -14,6 +14,7 @@ import AccountPage from './pages/AccountPage'
 import AboutPage from './pages/AboutPage'
 import FaqPage from './pages/FaqPage'
 import ContactPage from './pages/ContactPage'
+import AdminPage from './pages/AdminPage'
 import NotFoundPage from './pages/NotFoundPage'
 import './App.css'
 
@@ -36,6 +37,7 @@ function AppShell() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         </ErrorBoundary>

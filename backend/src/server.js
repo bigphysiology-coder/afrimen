@@ -5,6 +5,8 @@ import productsRouter from './routes/products.js'
 import cartRouter from './routes/cart.js'
 import wishlistRouter from './routes/wishlist.js'
 import contactRouter from './routes/contact.js'
+import authRouter from './routes/auth.js'
+import adminRouter from './routes/admin.js'
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -16,6 +18,8 @@ app.use('/api/products', productsRouter)
 app.use('/api/cart', cartRouter)
 app.use('/api/wishlist', wishlistRouter)
 app.use('/api/contact', contactRouter)
+app.use('/api/auth', authRouter)
+app.use('/api/admin', adminRouter)
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', time: new Date().toISOString() })

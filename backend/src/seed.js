@@ -1,4 +1,5 @@
 import { query } from './db.js'
+import { createHash } from 'crypto'
 
 const COLORS = { ink: '#232B33', walnut: '#6B4A3A', olive: '#5B5C42', slate: '#455A64', tobacco: '#7A5C3E', bone: '#8C7F63', rust: '#8C4A34', charcoal: '#3E4C59' }
 const COLOR_LIST = Object.keys(COLORS)
@@ -63,8 +64,10 @@ async function seed() {
   await query('DELETE FROM reviews')
   await query('DELETE FROM cart_items')
   await query('DELETE FROM wishlist_items')
+  await query('DELETE FROM users')
   await query('DELETE FROM products')
   await query("ALTER SEQUENCE products_id_seq RESTART WITH 1")
+  await query("ALTER SEQUENCE users_id_seq RESTART WITH 1")
 
   console.log('Inserting products...')
   for (let i = 0; i < RAW.length; i++) {
@@ -96,6 +99,13 @@ async function seed() {
       )
     }
   }
+
+  const adminHash = createHash('sha256').update('admin123').digest('hex')
+  await query(
+    `INSERT INTO users (name, email, password, role) VALUES ($1,$2,$3,$4) ON CONFLICT (email) DO NOTHING`,
+    ['Admin', 'admin@afrimen.ng', adminHash, 'admin']
+  )
+  console.log('Seeded admin user (admin@afrimen.ng / admin123)')
 
   console.log(`Seeded ${RAW.length} products with reviews`)
   process.exit(0)

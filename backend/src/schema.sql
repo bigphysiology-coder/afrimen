@@ -62,3 +62,12 @@ CREATE INDEX IF NOT EXISTS idx_products_collection ON products(collection);
 CREATE INDEX IF NOT EXISTS idx_reviews_product ON reviews(product_id);
 CREATE INDEX IF NOT EXISTS idx_cart_session ON cart_items(session_id);
 CREATE INDEX IF NOT EXISTS idx_wishlist_session ON wishlist_items(session_id);
+
+CREATE TABLE IF NOT EXISTS users (
+  id          SERIAL PRIMARY KEY,
+  name        TEXT NOT NULL,
+  email       TEXT NOT NULL UNIQUE,
+  password    TEXT NOT NULL,
+  role        TEXT NOT NULL DEFAULT 'customer',
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

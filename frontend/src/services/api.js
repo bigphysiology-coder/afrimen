@@ -80,3 +80,61 @@ export function submitContact(data) {
     body: JSON.stringify(data),
   })
 }
+
+export function login(email, password) {
+  return request('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+  })
+}
+
+export function register(name, email, password) {
+  return request('/api/auth/register', {
+    method: 'POST',
+    body: JSON.stringify({ name, email, password }),
+  })
+}
+
+export function getMe(token) {
+  return request('/api/auth/me', { headers: { Authorization: `Bearer ${token}` } })
+}
+
+export function logout() {
+  const token = localStorage.getItem('af_token')
+  if (!token) return Promise.resolve()
+  return request('/api/auth/logout', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+  }).catch(() => {})
+}
+
+function adminRequest(path, options = {}) {
+  const token = localStorage.getItem('af_token')
+  return request(path, {
+    ...options,
+    headers: { ...options.headers, Authorization: `Bearer ${token}` },
+  })
+}
+
+export function getAdminProducts() {
+  return adminRequest('/api/admin/products')
+}
+
+export function updateAdminProduct(id, data) {
+  return adminRequest(`/api/admin/products/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(data),
+  })
+}
+
+export function deleteAdminProduct(id) {
+  return adminRequest(`/api/admin/products/${id}`, { method: 'DELETE' })
+}
+
+export function getAdminMessages() {
+  return adminRequest('/api/admin/messages')
+}
+
+export function deleteAdminMessage(id) {
+  return adminRequest(`/api/admin/messages/${id}`, { method: 'DELETE' })
+}

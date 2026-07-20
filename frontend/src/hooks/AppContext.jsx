@@ -12,6 +12,8 @@ export function AppProvider({ children }) {
   const [toasts, setToasts] = useState([])
   const [qvProduct, setQvProduct] = useState(null)
   const [loaded, setLoaded] = useState(false)
+  const [user, setUser] = useState(null)
+  const [token, setToken] = useState(null)
 
   useEffect(() => {
     Promise.all([
@@ -100,6 +102,7 @@ export function AppProvider({ children }) {
     addToCart, removeFromCart, updateCartQty,
     wishlist: wishlistIds, wishlistData: wishlist, toggleWish, addToast,
     openQuickView, closeQuickView, clearFilters,
+    user, setUser, token, setToken,
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
