@@ -78,7 +78,9 @@ export default function Header() {
         <Link to="/shop?cat=Clothing" onClick={() => setMenuOpen(false)}>Clothing</Link>
         <Link to="/shop?cat=Shoes" onClick={() => setMenuOpen(false)}>Shoes</Link>
         <Link to="/shop?cat=Accessories" onClick={() => setMenuOpen(false)}>Accessories</Link>
+        <Link to="/wishlist" onClick={() => setMenuOpen(false)}>Wishlist</Link>
         <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart</Link>
+        <Link to="/account" onClick={() => setMenuOpen(false)}>Account</Link>
         <div className="msearch">
           <SearchIcon />
           <input type="search" placeholder="Search products..." onKeyDown={handleMobileSearch} aria-label="Search products" />

@@ -11,9 +11,9 @@ export default function Footer() {
           </div>
           <p>Considered menswear built from a tailor's notebook, not a trend board. Cut to measure, made to last, mended when it needs mending.</p>
           <div className="foot-social">
-            <a href="#" aria-label="Instagram"><InstagramIcon /></a>
-            <a href="#" aria-label="Pinterest"><PinterestIcon /></a>
-            <a href="#" aria-label="X"><XIcon /></a>
+            <a href="https://instagram.com/afrimen" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
+            <a href="https://pinterest.com/afrimen" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><PinterestIcon /></a>
+            <a href="https://x.com/afrimen" target="_blank" rel="noopener noreferrer" aria-label="X"><XIcon /></a>
           </div>
         </div>
         <div>

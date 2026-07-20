@@ -5,8 +5,10 @@ import TapeDivider from '../components/TapeDivider'
 import Testimonials from '../components/Testimonials'
 import { NeedleIcon, LeafIcon, ToolIcon, ReturnIcon } from '../data/icons'
 import { getProducts } from '../services/api'
+import { useApp } from '../hooks/AppContext'
 
 export default function HomePage() {
+  const { addToast } = useApp()
   useEffect(() => { document.title = 'Afrimen \u2014 Cut for African Men' }, [])
 
   const [featured, setFeatured] = useState([])
@@ -111,7 +113,7 @@ export default function HomePage() {
       <section className="newsletter">
         <div className="wrap nl-row">
           <h2>Get first look at new arrivals and restocks.</h2>
-          <form className="nl-form" onSubmit={e => { e.preventDefault(); alert('Subscribed \u2014 welcome to the list.'); e.target.reset() }}>
+          <form className="nl-form" onSubmit={e => { e.preventDefault(); addToast('Subscribed \u2014 welcome to the list.'); e.target.reset() }}>
             <input type="email" required placeholder="you@email.com" aria-label="Email address" />
             <button type="submit">Subscribe</button>
           </form>

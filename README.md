@@ -56,13 +56,18 @@ npm run install:all
 
 ### 2. Configure Database
 
-Create `backend/.env` with your PostgreSQL credentials (see `.env` file for required variables).
+Create `backend/.env` from `backend/.env.example` and set your PostgreSQL credentials.
+
+```bash
+cp backend/.env.example backend/.env
+```
 
 ### 3. Create & Seed Database
 
 ```bash
-npm run db:init
-npm run db:seed
+createdb -U postgres afrimen
+npm run db:init   # creates tables
+npm run db:seed   # populates 24 products + reviews
 ```
 
 ### 4. Start Development
