@@ -56,17 +56,7 @@ npm run install:all
 
 ### 2. Configure Database
 
-Edit `backend/.env` with your PostgreSQL credentials:
-
-```env
-PORT=4000
-PGHOST=localhost
-PGPORT=5432
-PGDATABASE=afrimen
-PGUSER=postgres
-PGPASSWORD=<your-password>
-CORS_ORIGIN=http://localhost:5173
-```
+Create `backend/.env` with your PostgreSQL credentials (see `.env` file for required variables).
 
 ### 3. Create & Seed Database
 
