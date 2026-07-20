@@ -22,7 +22,7 @@ export default function Footer() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/shop">Shop All</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/faq">Journal</Link></li>
+            <li><Link to="/faq">FAQ</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
@@ -40,7 +40,7 @@ export default function Footer() {
           <h5>Get in Touch</h5>
           <ul>
             <li>Ikeja, Lagos</li>
-            <li className="mono">+44 20 7946 0891</li>
+            <li className="mono">+234 1 227 9480</li>
             <li>hello@afrimen.ng</li>
             <li>{'Mon\u2013Fri, 9:00\u201318:00 WAT'}</li>
           </ul>
